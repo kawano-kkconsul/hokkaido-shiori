@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>青と紫の北海道へ、グランマの夏旅with勝則家</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap');
+
+  :root {
+    --sky: #3A8DC0;
+    --sky-light: #E8F4FB;
+    --sky-mid: #B8DDEF;
+    --forest: #3B7A57;
+    --forest-light: #E8F4EE;
+    --lavender: #7B68BE;
+    --lavender-light: #EEECF8;
+    --sand: #F7F4EF;
+    --text: #1E2A35;
+    --text-muted: #6B7D8E;
+    --border: #D6E8F2;
+    --white: #FFFFFF;
+    --radius: 10px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Noto Sans JP', sans-serif;
+    background: var(--sand);
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* 印刷 */
+  @media print {
+    body { background: white; font-size: 12px; }
+    .no-print { display: none; }
+    .page-break { page-break-before: always; }
+    .card { break-inside: avoid; }
+    header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+
+  /* ヘッダー */
+  header {
+    background: linear-gradient(135deg, var(--sky) 0%, #2A6EA0 60%, var(--forest) 100%);
+    color: white;
+    padding: 36px 24px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: repeating-linear-gradient(
+      60deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.03) 40px,
+      rgba(255,255,255,0.03) 80px
+    );
+  }
+  .header-eyebrow {
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    opacity: 0.8;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  header h1 {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    position: relative;
+  }
+  .header-sub {
+    font-size: 13px;
+    opacity: 0.85;
+    margin-bottom: 16px;
+  }
+  .header-tags {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .htag {
+    background: rgba(255,255,255,0.18);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    font-size: 12px;
+    padding: 3px 12px;
+  }
+
+  /* ナビ */
+  .toc {
+    background: white;
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .toc a {
+    font-size: 12px;
+    color: var(--sky);
+    text-decoration: none;
+    padding: 4px 10px;
+    border-radius: 20px;
+    border: 1px solid var(--sky-mid);
+    white-space: nowrap;
+    transition: background 0.15s;
+  }
+  .toc a:hover { background: var(--sky-light); }
+
+  /* コンテンツ */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 20px 16px 60px;
+  }
+
+  /* セクション */
+  .section { margin-bottom: 28px; }
+  .section-title {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--sky);
+    border-left: 4px solid var(--sky);
+    padding-left: 10px;
+    margin-bottom: 12px;
+  }
+
+  /* カード */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  .card-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    background: var(--sky-light);
+    border-bottom: 1px solid var(--border);
+  }
+  .card-head.green { background: var(--forest-light); border-color: #B8D9C8; }
+  .card-head.lavender { background: var(--lavender-light); border-color: #C8C4E8; }
+  .card-body { padding: 12px 14px; }
+
+  /* バッジ */
+  .badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-sky { background: var(--sky); color: white; }
+  .badge-forest { background: var(--forest); color: white; }
+  .badge-lav { background: var(--lavender); color: white; }
+  .badge-gray { background: #8A9BAA; color: white; }
+  .badge-amber { background: #E0902A; color: white; }
+
+  /* 行レイアウト */
+  .row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 5px;
+    align-items: flex-start;
+  }
+  .row:last-child { margin-bottom: 0; }
+  .time {
+    font-size: 12px;
+    color: var(--text-muted);
+    min-width: 50px;
+    padding-top: 2px;
+    font-variant-numeric: tabular-nums;
+  }
+  .detail { font-size: 13px; line-height: 1.6; flex: 1; }
+  .note {
+    font-size: 12px;
+    color: var(--text-muted);
+    background: var(--sand);
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-top: 6px;
+  }
+
+  /* タグ */
+  .tag {
+    display: inline-block;
+    font-size: 11px;
+    padding: 1px 7px;
+    border-radius: 4px;
+    margin-left: 4px;
+    background: var(--sky-light);
+    color: var(--sky);
+    border: 1px solid var(--sky-mid);
+    vertical-align: middle;
+  }
+  .tag-r { background: #FEF0F0; color: #C0392B; border-color: #F5C6C6; }
+  .tag-g { background: var(--forest-light); color: var(--forest); border-color: #B8D9C8; }
+
+  /* セパレータ */
+  .sep { border: none; border-top: 1px dashed var(--border); margin: 8px 0; }
+
+  /* フライト */
+  .flight-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .flight-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+  }
+  .flight-seg {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    margin-bottom: 6px;
+  }
+  .flight-seg:last-child { margin-bottom: 0; }
+  .airport { font-weight: 700; font-size: 15px; color: var(--text); }
+  .airport-sub { font-size: 11px; color: var(--text-muted); }
+  .flight-arrow {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    padding: 0 10px;
+  }
+  .flight-arrow::before {
+    content: '';
+    position: absolute;
+    top: 50%; left: 10px; right: 30px;
+    height: 1px;
+    background: var(--border);
+    transform: translateY(-50%);
+  }
+  .flight-arrow-icon {
+    display: inline-block;
+    font-size: 16px;
+    position: relative;
+    color: var(--sky);
+  }
+  .flight-info {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 1px;
+  }
+  .seat-info {
+    font-size: 12px;
+    color: var(--forest);
+    background: var(--forest-light);
+    border-radius: 5px;
+    padding: 4px 10px;
+    margin-top: 8px;
+  }
+  .transfer-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--lavender-light);
+    border: 1px solid #C8C4E8;
+    border-radius: 6px;
+    padding: 5px 12px;
+    margin: 6px 0;
+    font-size: 12px;
+    color: var(--lavender);
+  }
+
+  /* スポット情報 */
+  .spot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+  }
+  .spot-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+  }
+  .spot-name {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--text);
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .spot-row {
+    display: flex;
+    gap: 6px;
+    margin-bottom: 4px;
+    font-size: 12px;
+  }
+  .spot-label {
+    color: var(--text-muted);
+    min-width: 44px;
+    flex-shrink: 0;
+  }
+  .spot-memo {
+    font-size: 11px;
+    color: var(--forest);
+    background: var(--forest-light);
+    border-radius: 4px;
+    padding: 4px 8px;
+    margin-top: 6px;
+  }
+
+  /* 持ち物チェックリスト */
+  .checklist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 6px;
+  }
+  .check-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 5px 8px;
+    border-radius: 6px;
+    transition: background 0.12s;
+    user-select: none;
+  }
+  .check-item:hover { background: var(--sky-light); }
+  .check-box {
+    width: 16px; height: 16px;
+    border: 1.5px solid var(--border);
+    border-radius: 4px;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .check-item.done .check-box {
+    background: var(--forest);
+    border-color: var(--forest);
+  }
+  .check-item.done .check-box::after {
+    content: '';
+    width: 9px; height: 6px;
+    border-left: 2px solid white;
+    border-bottom: 2px solid white;
+    transform: rotate(-45deg) translateY(-1px);
+    display: block;
+  }
+  .check-item.done span { color: var(--text-muted); text-decoration: line-through; }
+
+  /* 予算メモ */
+  .budget-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .budget-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 10px 14px;
+  }
+  .budget-label { font-size: 11px; color: var(--text-muted); margin-bottom: 3px; }
+  .budget-value { font-size: 18px; font-weight: 700; color: var(--sky); }
+  .budget-note { font-size: 11px; color: var(--text-muted); margin-top: 2px; }
+  .budget-field {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 14px;
+  }
+  .budget-field label { font-size: 12px; color: var(--text-muted); display: block; margin-bottom: 4px; }
+  .budget-field input, .budget-field textarea {
+    width: 100%; border: 1px solid var(--border); border-radius: 6px;
+    padding: 6px 10px; font-size: 13px; font-family: inherit;
+    color: var(--text); background: var(--sand);
+    margin-bottom: 8px;
+    resize: vertical;
+  }
+  .budget-field input:focus, .budget-field textarea:focus {
+    outline: none; border-color: var(--sky);
+    background: white;
+  }
+
+  /* 緊急連絡先 */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+  }
+  .contact-item {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .contact-icon {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .contact-icon.sky { background: var(--sky-light); }
+  .contact-icon.red { background: #FEF0F0; }
+  .contact-icon.green { background: var(--forest-light); }
+  .contact-label { font-size: 11px; color: var(--text-muted); }
+  .contact-value { font-size: 13px; font-weight: 700; color: var(--text); }
+
+  /* 印刷ボタン */
+  .print-btn {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    background: var(--sky);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    box-shadow: 0 4px 16px rgba(58,141,192,0.4);
+    transition: background 0.15s;
+    z-index: 200;
+  }
+  .print-btn:hover { background: #2A6EA0; }
+
+  /* フッター */
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 20px;
+    border-top: 1px solid var(--border);
+    margin-top: 40px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-eyebrow">Family Travel Guide</div>
+  <h1>青と紫の北海道へ、グランマの夏旅with勝則家</h1>
+  <div class="header-sub">富良野・美瑛・支笏湖 ／ 5名・4泊5日</div>
+  <div class="header-tags">
+    <span class="htag">📅 2026年8月1日〜5日</span>
+    <span class="htag">👨‍👩‍👧‍👦 グランマ・勝則・和子・愛佳・里帆</span>
+    <span class="htag">✈️ ANA往復</span>
+    <span class="htag">🚗 レンタカー</span>
+  </div>
+</header>
+
+<nav class="toc no-print">
+  <a href="#flight">フライト</a>
+  <a href="#hotel">宿泊</a>
+  <a href="#schedule">日程</a>
+  <a href="#spots">スポット情報</a>
+  <a href="#checklist">持ち物</a>
+</nav>
+
+<div class="container">
+
+  <!-- フライト -->
+  <section class="section" id="flight">
+    <div class="section-title">✈️ フライト</div>
+
+    <div class="flight-box">
+      <div class="flight-title">往路 ── 8月1日（土）</div>
+      <div class="flight-seg">
+        <div>
+          <div class="airport">宮崎</div>
+          <div class="airport-sub">08:05発</div>
+        </div>
+        <div class="flight-arrow">
+          <span class="flight-arrow-icon">✈</span>
+          <div class="flight-info">NH602 / ANA WINGS<br>1時間40分</div>
+        </div>
+        <div>
+          <div class="airport">羽田</div>
+          <div class="airport-sub">09:45着 T2</div>
+        </div>
+      </div>
+      <div class="transfer-badge">🔄 乗継　羽田 T2 ／ 75分 ／ 11:00発</div>
+      <div class="flight-seg">
+        <div>
+          <div class="airport">羽田</div>
+          <div class="airport-sub">11:00発 T2</div>
+        </div>
+        <div class="flight-arrow">
+          <span class="flight-arrow-icon">✈</span>
+          <div class="flight-info">NH061 / ANA<br>1時間35分</div>
+        </div>
+        <div>
+          <div class="airport">新千歳</div>
+          <div class="airport-sub">12:35着 T-D</div>
+        </div>
+      </div>
+      <div class="seat-info">🪑 座席：23A・23C・23H・23B・23J → 37K・37H・38J・37J・38K</div>
+    </div>
+
+    <div class="flight-box">
+      <div class="flight-title">復路 ── 8月5日（水）</div>
+      <div class="flight-seg">
+        <div>
+          <div class="airport">新千歳</div>
+          <div class="airport-sub">16:20発 T-D</div>
+        </div>
+        <div class="flight-arrow">
+          <span class="flight-arrow-icon">✈</span>
+          <div class="flight-info">NH778 / ANA<br>1時間50分</div>
+        </div>
+        <div>
+          <div class="airport">伊丹</div>
+          <div class="airport-sub">18:10着</div>
+        </div>
+      </div>
+      <div class="transfer-badge">🔄 乗継　伊丹 ／ 95分 ／ 19:45発</div>
+      <div class="flight-seg">
+        <div>
+          <div class="airport">伊丹</div>
+          <div class="airport-sub">19:45発</div>
+        </div>
+        <div class="flight-arrow">
+          <span class="flight-arrow-icon">✈</span>
+          <div class="flight-info">NH511 / ANA WINGS<br>1時間10分</div>
+        </div>
+        <div>
+          <div class="airport">宮崎</div>
+          <div class="airport-sub">20:55着</div>
+        </div>
+      </div>
+      <div class="seat-info">🪑 座席：29D・29G・29C・29F・29A → 22K・22H・22C・22J・22B</div>
+    </div>
+  </section>
+
+  <!-- 宿泊 -->
+  <section class="section" id="hotel">
+    <div class="section-title">🏨 宿泊先</div>
+    <div class="card">
+      <div class="card-head">
+        <span class="badge badge-sky">1〜3泊目</span>
+        <span style="font-weight:700">ラビスタ富良野ヒルズ</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">住所</div><div class="detail">北海道富良野市北の峰町13-13</div></div>
+        <div class="row"><div class="time">電話</div><div class="detail">0167-22-1111</div></div>
+        <div class="row"><div class="time">IN/OUT</div><div class="detail">チェックイン 15:00 ／ チェックアウト 11:00</div></div>
+        <div class="row"><div class="time">設備</div><div class="detail">大浴場・サウナあり・朝食付き</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head green">
+        <span class="badge badge-forest">4泊目</span>
+        <span style="font-weight:700">しこつ湖鶴雅リゾートスパ 水の謌</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">住所</div><div class="detail">北海道千歳市支笏湖温泉番外地</div></div>
+        <div class="row"><div class="time">電話</div><div class="detail">0123-25-2211</div></div>
+        <div class="row"><div class="time">IN/OUT</div><div class="detail">チェックイン 15:00 ／ チェックアウト 10:00</div></div>
+        <div class="row"><div class="time">設備</div><div class="detail">温泉・露天風呂・館内ダイニング</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head lavender">
+        <span class="badge badge-lav">レンタカー</span>
+        <span style="font-weight:700">ワールドネットレンタカー 新千歳空港</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">車種</div><div class="detail">ヴォクシー/ノアクラス（7名乗り・新車）</div></div>
+        <div class="row"><div class="time">受取</div><div class="detail">新千歳空港 1F カウンター → 無料送迎バスで移動</div></div>
+        <div class="row"><div class="time">返却</div><div class="detail">8月5日（水）新千歳空港</div></div>
+        <div class="row"><div class="time">注意</div><div class="detail">免責補償を必ず確認・付帯すること</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 日程 -->
+  <section class="section" id="schedule">
+    <div class="section-title">📅 日程</div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="badge badge-sky">DAY 1</span>
+        <span style="font-weight:700">移動日　宮崎 → 富良野</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月1日（土）</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">08:05</div><div class="detail">宮崎空港 発　NH602</div></div>
+        <div class="row"><div class="time">09:45</div><div class="detail">羽田着　75分乗継</div></div>
+        <div class="row"><div class="time">11:00</div><div class="detail">羽田 発　NH061</div></div>
+        <div class="row"><div class="time">12:35</div><div class="detail">新千歳着　→ レンタカー手続き</div></div>
+        <div class="row"><div class="time">〜</div><div class="detail">途中1回休憩をはさみながら富良野へ（約2時間）</div></div>
+        <div class="row"><div class="time">17:30</div><div class="detail">ラビスタ富良野ヒルズ チェックイン<span class="tag tag-g">3泊</span></div></div>
+        <div class="row"><div class="time">夜</div><div class="detail">夕食はホテル周辺or館内で。初日は早めに就寝</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head green">
+        <span class="badge badge-forest">DAY 2</span>
+        <span style="font-weight:700">美瑛　早朝集中プラン</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月2日（日）</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">07:00</div><div class="detail">富良野 出発（早朝が駐車場・混雑ともにベスト）</div></div>
+        <div class="row"><div class="time">07:30</div><div class="detail">青い池　約60分<span class="tag">駐車場7時〜</span></div></div>
+        <div class="row"><div class="time">09:00</div><div class="detail">白ひげの滝　約30分<span class="tag tag-r">足元注意</span></div></div>
+        <div class="row"><div class="time">09:45</div><div class="detail">四季彩の丘　約60分</div></div>
+        <div class="row"><div class="time">11:30</div><div class="detail">富良野に戻る</div></div>
+        <div class="row"><div class="time">午後</div><div class="detail">ホテルまたは周辺散策でゆっくり休養</div></div>
+        <div class="note">☁️ 天気が悪い場合はDAY3と入替OK。パッチワークの路は今回スキップ。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="badge badge-amber">DAY 3</span>
+        <span style="font-weight:700">富良野　ゆったり観光</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月3日（月）</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">09:00</div><div class="detail">ファーム富田（朝イチで混雑前に）　無料入場・無料駐車</div></div>
+        <div class="row"><div class="time">11:00頃</div><div class="detail">富良野市内に移動</div></div>
+        <div class="row"><div class="time">15〜16時</div><div class="detail">くまげら<span class="tag">当日並び・15〜16時台が狙い目</span></div></div>
+        <div class="row"><div class="time">〜</div><div class="detail">チーズ工房 or 自由時間（気力次第）</div></div>
+        <div class="row"><div class="time">夕方</div><div class="detail">ホテルに戻り大浴場・サウナでのんびり</div></div>
+        <div class="note">月曜日のため週末より混雑が落ち着く見込み。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head lavender">
+        <span class="badge badge-lav">DAY 4</span>
+        <span style="font-weight:700">富良野 → 支笏湖</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月4日（火）</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">10:00</div><div class="detail">ラビスタ チェックアウト・出発</div></div>
+        <div class="row"><div class="time">〜</div><div class="detail">夕張メロード<span class="tag">寄れたらラッキー程度</span></div></div>
+        <div class="row"><div class="time">14:00</div><div class="detail">支笏湖エリア到着</div></div>
+        <div class="row"><div class="time">15:00</div><div class="detail">水の謌 チェックイン<span class="tag tag-g">1泊</span></div></div>
+        <div class="row"><div class="time">〜</div><div class="detail">温泉・露天風呂でゆっくり</div></div>
+        <div class="row"><div class="time">夜</div><div class="detail">館内ダイニングで夕食<span class="tag tag-r">チェックイン時に確認</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="badge badge-gray">DAY 5</span>
+        <span style="font-weight:700">支笏湖 → 宮崎　帰宅</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月5日（水）</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">10:00</div><div class="detail">水の謌 チェックアウト</div></div>
+        <div class="row"><div class="time">11:00</div><div class="detail">新千歳空港着　→ レンタカー返却</div></div>
+        <div class="row"><div class="time">〜16:20</div><div class="detail">空港内でランチ・土産購入</div></div>
+        <div class="row"><div class="time">16:20</div><div class="detail">新千歳 発　NH778 → 伊丹乗継</div></div>
+        <div class="row"><div class="time">20:55</div><div class="detail">宮崎空港 着　おつかれさまでした！</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- スポット情報 -->
+  <section class="section" id="spots">
+    <div class="section-title">📍 スポット情報</div>
+    <div class="spot-grid">
+      <div class="spot-card">
+        <div class="spot-name">青い池</div>
+        <div class="spot-row"><span class="spot-label">場所</span><span>北海道美瑛町白金</span></div>
+        <div class="spot-row"><span class="spot-label">入場</span><span>無料（24時間）</span></div>
+        <div class="spot-row"><span class="spot-label">駐車場</span><span>7:00〜19:00（夏季）</span></div>
+        <div class="spot-row"><span class="spot-label">駐車料</span><span>普通車 1,000円</span></div>
+        <div class="spot-memo">早朝7〜8時台が空いていてベスト。遊歩道は濡れやすく足元注意。</div>
+      </div>
+      <div class="spot-card">
+        <div class="spot-name">白ひげの滝</div>
+        <div class="spot-row"><span class="spot-label">場所</span><span>北海道美瑛町白金温泉</span></div>
+        <div class="spot-row"><span class="spot-label">入場</span><span>無料</span></div>
+        <div class="spot-row"><span class="spot-label">駐車場</span><span>白金温泉街の無料P利用</span></div>
+        <div class="spot-memo">ブルーリバー橋から見下ろすと青い川も見える。青い池から車で約5分。</div>
+      </div>
+      <div class="spot-card">
+        <div class="spot-name">四季彩の丘</div>
+        <div class="spot-row"><span class="spot-label">場所</span><span>北海道美瑛町新星第三</span></div>
+        <div class="spot-row"><span class="spot-label">営業</span><span>8:40〜17:30（夏季）</span></div>
+        <div class="spot-row"><span class="spot-label">入園料</span><span>大人800円・中小500円（7〜9月）</span></div>
+        <div class="spot-row"><span class="spot-label">駐車料</span><span>普通車 500円（6〜9月）</span></div>
+        <div class="spot-memo">ノロッコ号（1周500円）で母も楽に回れる。坂道あるので無理せず。</div>
+      </div>
+      <div class="spot-card">
+        <div class="spot-name">ファーム富田</div>
+        <div class="spot-row"><span class="spot-label">場所</span><span>北海道中富良野町基線北15号</span></div>
+        <div class="spot-row"><span class="spot-label">営業</span><span>日の出〜日没（24時間解放）</span></div>
+        <div class="spot-row"><span class="spot-label">入場</span><span>無料</span></div>
+        <div class="spot-row"><span class="spot-label">駐車場</span><span>約500台・無料</span></div>
+        <div class="spot-memo">8月はラベンダー刈取り後。ひまわり・他の花は満開。朝9時前がベスト。</div>
+      </div>
+      <div class="spot-card">
+        <div class="spot-name">くまげら</div>
+        <div class="spot-row"><span class="spot-label">場所</span><span>富良野市日の出町3-22</span></div>
+        <div class="spot-row"><span class="spot-label">営業</span><span>11:30〜21:30（水曜定休）</span></div>
+        <div class="spot-row"><span class="spot-label">予約</span><span>6〜8月下旬は予約不可・当日並び</span></div>
+        <div class="spot-row"><span class="spot-label">TEL</span><span>0167-22-3489</span></div>
+        <div class="spot-memo">15〜16時台が比較的空いている。名物：ローストビーフ丼・ホエーカレー。</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 持ち物チェックリスト -->
+  <section class="section" id="checklist">
+    <div class="section-title">🎒 持ち物チェックリスト</div>
+    <div class="card">
+      <div class="card-body">
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:10px">タップ/クリックでチェック</div>
+        <div style="font-weight:700;font-size:12px;color:var(--text-muted);margin-bottom:6px">書類・お金</div>
+        <div class="checklist" id="cl-docs">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>航空券（スマホ/印刷）</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>クレジットカード</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>健康保険証</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>免許証</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>現金（小銭含む）</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>このしおり</span></div>
+        </div>
+        <div style="font-weight:700;font-size:12px;color:var(--text-muted);margin:12px 0 6px">衣類・日用品</div>
+        <div class="checklist">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>着替え（4〜5日分）</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>羽織もの・薄手パーカー</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>グリップのある靴</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>帽子・サングラス</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>日焼け止め</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>折りたたみ傘</span></div>
+        </div>
+        <div style="font-weight:700;font-size:12px;color:var(--text-muted);margin:12px 0 6px">デジタル・その他</div>
+        <div class="checklist">
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>スマートフォン</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>充電器・ケーブル</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>モバイルバッテリー</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>カメラ・SDカード</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>常備薬・救急セット</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>虫除けスプレー</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>エコバッグ</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>子どもの暇つぶしグッズ</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+</div>
+
+<button class="print-btn no-print" onclick="window.print()">🖨️ 印刷 / PDF保存</button>
+
+<footer>
+  北海道旅行しおり 2026年8月1日〜5日 ／ 富良野・美瑛・支笏湖<br>
+  ※掲載情報は作成時点のものです。現地では最新情報を必ずご確認ください。
+</footer>
+
+<script>
+function toggle(el) {
+  el.classList.toggle('done');
+}
+</script>
+</body>
+</html>
