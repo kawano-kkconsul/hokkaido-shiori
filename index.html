@@ -430,6 +430,48 @@
   .contact-label { font-size: 11px; color: var(--text-muted); }
   .contact-value { font-size: 13px; font-weight: 700; color: var(--text); }
 
+  /* 目的セクション */
+  .purpose-box {
+    background: linear-gradient(135deg, var(--lavender-light) 0%, var(--sky-light) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px 22px;
+    position: relative;
+    overflow: hidden;
+  }
+  .purpose-box::before {
+    content: '💜';
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-size: 36px;
+    opacity: 0.15;
+  }
+  .purpose-lead {
+    font-size: 13px;
+    color: var(--lavender);
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 0.05em;
+  }
+  .purpose-text {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 15px;
+    line-height: 2;
+    color: var(--text);
+  }
+  .purpose-text em {
+    font-style: normal;
+    color: var(--lavender);
+    font-weight: 700;
+  }
+  .purpose-sign {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: right;
+  }
+
   /* 印刷ボタン */
   .print-btn {
     position: fixed;
@@ -474,14 +516,179 @@
 </header>
 
 <nav class="toc no-print">
+  <a href="#purpose">この旅について</a>
+  <a href="#schedule">日程</a>
+  <a href="#map">ルートマップ</a>
   <a href="#flight">フライト</a>
   <a href="#hotel">宿泊</a>
-  <a href="#schedule">日程</a>
+  <a href="#area">エリア紹介</a>
   <a href="#spots">スポット情報</a>
   <a href="#checklist">持ち物</a>
 </nav>
 
 <div class="container">
+
+  <!-- この旅について -->
+  <section class="section" id="purpose">
+    <div class="section-title">🌸 この旅について</div>
+    <div class="purpose-box">
+      <div class="purpose-lead">― 2026年8月、北海道へ ―</div>
+      <div class="purpose-text">
+        ドロミテの感動、冷めやらぬうちに。<br>
+        イタリアの山岳地帯を歩いたグランマが、次に見たかった景色は——<br>
+        <em>地平線まで続く、紫の絨毯。</em><br><br>
+        グランマは止まらない。「美しい景色があれば、どこへでも行く」<br>
+        ベネチアより、富良野。そういう人です、うちのグランマは。
+      </div>
+      <div class="purpose-sign">グランマ・勝則・和子・愛佳・里帆　5人の夏旅 2026.8.1〜8.5</div>
+    </div>
+  </section>
+
+  <!-- 日程 -->
+  <section class="section" id="schedule">
+    <div class="section-title">📅 日程</div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="badge badge-sky">DAY 1</span>
+        <span style="font-weight:700">移動日　宮崎 → 富良野</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月1日（土）</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">05:30</div><div class="detail">🏠 延岡 出発　→ 宮崎空港へ（約1時間30分）</div></div>
+        <div class="row"><div class="time">08:05</div><div class="detail">宮崎空港 発　NH602</div></div>
+        <div class="row"><div class="time">09:45</div><div class="detail">羽田着　75分乗継</div></div>
+        <div class="row"><div class="time">11:00</div><div class="detail">羽田 発　NH061</div></div>
+        <div class="row"><div class="time">12:35</div><div class="detail">新千歳着　→ レンタカー手続き</div></div>
+        <div class="row"><div class="time">13:30</div><div class="detail">新千歳空港内で昼食（ラーメン・スープカレーなど北海道グルメを）</div></div>
+        <div class="row"><div class="time">〜</div><div class="detail">途中1回休憩をはさみながら富良野へ（約2時間）</div></div>
+        <div class="row"><div class="time">17:30</div><div class="detail">ラビスタ富良野ヒルズ チェックイン<span class="tag tag-g">3泊</span></div></div>
+        <div class="row"><div class="time">夜</div><div class="detail">夕食はホテル周辺or館内で。初日は早めに就寝</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head green">
+        <span class="badge badge-forest">DAY 2</span>
+        <span style="font-weight:700">美瑛　早朝集中プラン</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月2日（日）</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">07:00</div><div class="detail">富良野 出発（早朝が駐車場・混雑ともにベスト）</div></div>
+        <div class="row"><div class="time">07:30</div><div class="detail">青い池　約60分<span class="tag">駐車場7時〜</span><span class="tag tag-r">足元注意</span></div></div>
+        <div class="row"><div class="time">09:00</div><div class="detail">白ひげの滝　約30分<span class="tag tag-r">足元注意</span></div></div>
+        <div class="row"><div class="time">09:45</div><div class="detail">四季彩の丘　約60分</div></div>
+        <div class="row"><div class="time">11:30</div><div class="detail">富良野に戻る</div></div>
+        <div class="row"><div class="time">午後</div><div class="detail">ホテルまたは周辺散策でゆっくり休養</div></div>
+        <div class="note">☁️ 天気が悪い場合はDAY3と入替OK。パッチワークの路は今回スキップ。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="badge badge-amber">DAY 3</span>
+        <span style="font-weight:700">富良野　ゆったり観光</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月3日（月）</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">09:00</div><div class="detail">ファーム富田（朝イチで混雑前に）　無料入場・無料駐車</div></div>
+        <div class="row"><div class="time">11:00頃</div><div class="detail">富良野市内に移動</div></div>
+        <div class="row"><div class="time">15〜16時</div><div class="detail">くまげら<span class="tag">当日並び・15〜16時台が狙い目</span></div></div>
+        <div class="row"><div class="time">〜</div><div class="detail">チーズ工房 or 自由時間（気力次第）</div></div>
+        <div class="row"><div class="time">夕方</div><div class="detail">ホテルに戻り大浴場・サウナでのんびり</div></div>
+        <div class="note">月曜日のため週末より混雑が落ち着く見込み。</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head lavender">
+        <span class="badge badge-lav">DAY 4</span>
+        <span style="font-weight:700">富良野 → 支笏湖</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月4日（火）</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">10:00</div><div class="detail">ラビスタ チェックアウト・出発</div></div>
+        <div class="row"><div class="time">〜</div><div class="detail">夕張メロード<span class="tag">寄れたらラッキー程度</span></div></div>
+        <div class="row"><div class="time">14:00</div><div class="detail">支笏湖エリア到着</div></div>
+        <div class="row"><div class="time">15:00</div><div class="detail">水の謌 チェックイン<span class="tag tag-g">1泊</span></div></div>
+        <div class="row"><div class="time">〜</div><div class="detail">温泉・露天風呂でゆっくり</div></div>
+        <div class="row"><div class="time">夜</div><div class="detail">館内ダイニングで夕食<span class="tag tag-r">チェックイン時に確認</span></div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-head">
+        <span class="badge badge-gray">DAY 5</span>
+        <span style="font-weight:700">支笏湖 → 宮崎　帰宅</span>
+        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月5日（水）</span>
+      </div>
+      <div class="card-body">
+        <div class="row"><div class="time">10:00</div><div class="detail">水の謌 チェックアウト</div></div>
+        <div class="row"><div class="time">11:00</div><div class="detail">新千歳空港着　→ レンタカー返却</div></div>
+        <div class="row"><div class="time">〜16:20</div><div class="detail">空港内でランチ・土産購入<span class="tag">時間あれば新千歳空港温泉（4F）もあり</span></div></div>
+        <div class="row"><div class="time">16:20</div><div class="detail">新千歳 発　NH778 → 伊丹乗継</div></div>
+        <div class="row"><div class="time">20:55</div><div class="detail">宮崎空港 着</div></div>
+        <div class="row"><div class="time">23:00</div><div class="detail">🏠 延岡 到着　おつかれさまでした！</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ルートマップ -->
+  <section class="section" id="map">
+    <div class="section-title">🗺️ ルートマップ</div>
+    <div class="card">
+      <div class="card-body" style="padding:0;overflow:hidden;border-radius:var(--radius)">
+        <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#EAF4FB">
+          <!-- 北海道の大まかな輪郭 -->
+          <path d="M60,60 Q120,30 200,40 Q280,35 340,80 Q370,120 360,180 Q350,230 320,260 Q290,290 260,300 Q240,310 220,340 Q200,360 180,350 Q150,340 130,310 Q100,280 80,240 Q50,200 45,160 Q40,110 60,60 Z" fill="#C8E6C9" stroke="#8BC34A" stroke-width="1.5" opacity="0.6"/>
+          <!-- 道路ライン -->
+          <line x1="220" y1="200" x2="190" y2="280" stroke="#FF8A65" stroke-width="2.5" stroke-dasharray="6,3"/>
+          <line x1="190" y1="280" x2="230" y2="310" stroke="#FF8A65" stroke-width="2.5" stroke-dasharray="6,3"/>
+          <!-- 新千歳空港 -->
+          <circle cx="230" cy="310" r="10" fill="#3A8DC0" stroke="white" stroke-width="2"/>
+          <text x="245" y="308" font-size="11" fill="#1E2A35" font-family="sans-serif" font-weight="bold">新千歳空港</text>
+          <text x="245" y="320" font-size="10" fill="#6B7D8E" font-family="sans-serif">✈ DAY1着 / DAY5発</text>
+          <!-- 支笏湖 -->
+          <ellipse cx="210" cy="295" rx="14" ry="10" fill="#7BB8D4" stroke="white" stroke-width="1.5"/>
+          <text x="160" y="290" font-size="11" fill="#1E2A35" font-family="sans-serif" font-weight="bold">支笏湖</text>
+          <text x="160" y="302" font-size="10" fill="#6B7D8E" font-family="sans-serif">🏨 DAY4泊</text>
+          <!-- 富良野 -->
+          <circle cx="190" cy="230" r="13" fill="#7B68BE" stroke="white" stroke-width="2"/>
+          <text x="135" y="226" font-size="11" fill="#1E2A35" font-family="sans-serif" font-weight="bold">富良野</text>
+          <text x="135" y="238" font-size="10" fill="#6B7D8E" font-family="sans-serif">🏨 DAY1〜3泊</text>
+          <!-- 美瑛 -->
+          <circle cx="220" cy="165" r="11" fill="#3B7A57" stroke="white" stroke-width="2"/>
+          <text x="235" y="162" font-size="11" fill="#1E2A35" font-family="sans-serif" font-weight="bold">美瑛</text>
+          <text x="235" y="174" font-size="10" fill="#6B7D8E" font-family="sans-serif">DAY2 観光</text>
+          <!-- 富良野〜美瑛の矢印 -->
+          <path d="M190,217 Q200,190 218,178" stroke="#7B68BE" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+          <path d="M218,178 Q205,205 190,218" stroke="#3B7A57" stroke-width="2" fill="none" stroke-dasharray="4,3" marker-end="url(#arrow2)"/>
+          <!-- 矢印マーカー -->
+          <defs>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#7B68BE"/>
+            </marker>
+            <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L8,3 z" fill="#3B7A57"/>
+            </marker>
+          </defs>
+          <!-- 凡例 -->
+          <rect x="20" y="390" width="360" height="75" rx="8" fill="white" opacity="0.85"/>
+          <circle cx="40" cy="410" r="6" fill="#7B68BE"/>
+          <text x="52" y="414" font-size="11" fill="#1E2A35" font-family="sans-serif">富良野（3泊の拠点）</text>
+          <circle cx="40" cy="430" r="6" fill="#3B7A57"/>
+          <text x="52" y="434" font-size="11" fill="#1E2A35" font-family="sans-serif">美瑛（DAY2日帰り観光）</text>
+          <ellipse cx="40" cy="450" rx="8" ry="6" fill="#7BB8D4"/>
+          <text x="52" y="454" font-size="11" fill="#1E2A35" font-family="sans-serif">支笏湖（DAY4 ご褒美宿）</text>
+          <line x1="210" y1="408" x2="240" y2="408" stroke="#FF8A65" stroke-width="2" stroke-dasharray="5,3"/>
+          <text x="248" y="412" font-size="11" fill="#1E2A35" font-family="sans-serif">移動ルート</text>
+          <!-- タイトル -->
+          <text x="200" y="22" font-size="13" fill="#1E2A35" font-family="sans-serif" font-weight="bold" text-anchor="middle">北海道 移動ルート</text>
+          <text x="200" y="38" font-size="10" fill="#6B7D8E" font-family="sans-serif" text-anchor="middle">新千歳 → 富良野 ⇔ 美瑛 → 支笏湖 → 新千歳</text>
+        </svg>
+      </div>
+    </div>
+  </section>
 
   <!-- フライト -->
   <section class="section" id="flight">
@@ -598,88 +805,57 @@
     </div>
   </section>
 
-  <!-- 日程 -->
-  <section class="section" id="schedule">
-    <div class="section-title">📅 日程</div>
+  <!-- エリア紹介 -->
+  <section class="section" id="area">
+    <div class="section-title">🌸 エリア紹介</div>
 
     <div class="card">
       <div class="card-head">
-        <span class="badge badge-sky">DAY 1</span>
-        <span style="font-weight:700">移動日　宮崎 → 富良野</span>
-        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月1日（土）</span>
+        <span class="badge badge-lav">富良野</span>
+        <span style="font-weight:700">北海道のへそ・花と食の町</span>
       </div>
       <div class="card-body">
-        <div class="row"><div class="time">08:05</div><div class="detail">宮崎空港 発　NH602</div></div>
-        <div class="row"><div class="time">09:45</div><div class="detail">羽田着　75分乗継</div></div>
-        <div class="row"><div class="time">11:00</div><div class="detail">羽田 発　NH061</div></div>
-        <div class="row"><div class="time">12:35</div><div class="detail">新千歳着　→ レンタカー手続き</div></div>
-        <div class="row"><div class="time">〜</div><div class="detail">途中1回休憩をはさみながら富良野へ（約2時間）</div></div>
-        <div class="row"><div class="time">17:30</div><div class="detail">ラビスタ富良野ヒルズ チェックイン<span class="tag tag-g">3泊</span></div></div>
-        <div class="row"><div class="time">夜</div><div class="detail">夕食はホテル周辺or館内で。初日は早めに就寝</div></div>
+        <div style="font-size:13px;line-height:1.8;margin-bottom:10px">北海道のほぼ中央に位置し、「北の国から」のロケ地としても有名な町。広大な農地が広がり、ラベンダー・メロン・ワインの産地として知られる。夏は色とりどりの花畑が絶景を作り出す。</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <div style="background:var(--lavender-light);border-radius:6px;padding:5px 10px;font-size:12px">🍈 富良野メロン</div>
+          <div style="background:var(--lavender-light);border-radius:6px;padding:5px 10px;font-size:12px">🍷 富良野ワイン</div>
+          <div style="background:var(--lavender-light);border-radius:6px;padding:5px 10px;font-size:12px">🧀 富良野チーズ</div>
+          <div style="background:var(--lavender-light);border-radius:6px;padding:5px 10px;font-size:12px">🍛 オムカレー</div>
+          <div style="background:var(--lavender-light);border-radius:6px;padding:5px 10px;font-size:12px">💜 ラベンダーグッズ</div>
+          <div style="background:var(--lavender-light);border-radius:6px;padding:5px 10px;font-size:12px">🌽 旬の野菜・スイーツ</div>
+        </div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-head green">
-        <span class="badge badge-forest">DAY 2</span>
-        <span style="font-weight:700">美瑛　早朝集中プラン</span>
-        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月2日（日）</span>
+        <span class="badge badge-forest">美瑛</span>
+        <span style="font-weight:700">丘のまち・絶景の宝庫</span>
       </div>
       <div class="card-body">
-        <div class="row"><div class="time">07:00</div><div class="detail">富良野 出発（早朝が駐車場・混雑ともにベスト）</div></div>
-        <div class="row"><div class="time">07:30</div><div class="detail">青い池　約60分<span class="tag">駐車場7時〜</span></div></div>
-        <div class="row"><div class="time">09:00</div><div class="detail">白ひげの滝　約30分<span class="tag tag-r">足元注意</span></div></div>
-        <div class="row"><div class="time">09:45</div><div class="detail">四季彩の丘　約60分</div></div>
-        <div class="row"><div class="time">11:30</div><div class="detail">富良野に戻る</div></div>
-        <div class="row"><div class="time">午後</div><div class="detail">ホテルまたは周辺散策でゆっくり休養</div></div>
-        <div class="note">☁️ 天気が悪い場合はDAY3と入替OK。パッチワークの路は今回スキップ。</div>
+        <div style="font-size:13px;line-height:1.8;margin-bottom:10px">なだらかな丘陵地帯に畑が広がる「パッチワークの丘」が有名。神秘的なコバルトブルーの「青い池」や、高さ30mの「白ひげの滝」など、自然が生み出す幻想的な景色が楽しめる。小麦・酪農の産地でもあり、乳製品グルメも充実。</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <div style="background:var(--forest-light);border-radius:6px;padding:5px 10px;font-size:12px">🍦 美瑛牛乳ソフトクリーム</div>
+          <div style="background:var(--forest-light);border-radius:6px;padding:5px 10px;font-size:12px">🌾 美瑛小麦のパン・うどん</div>
+          <div style="background:var(--forest-light);border-radius:6px;padding:5px 10px;font-size:12px">🧀 濃厚チーズ菓子</div>
+          <div style="background:var(--forest-light);border-radius:6px;padding:5px 10px;font-size:12px">📸 丘の絶景写真</div>
+        </div>
       </div>
     </div>
 
     <div class="card">
       <div class="card-head">
-        <span class="badge badge-amber">DAY 3</span>
-        <span style="font-weight:700">富良野　ゆったり観光</span>
-        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月3日（月）</span>
+        <span class="badge badge-sky">支笏湖</span>
+        <span style="font-weight:700">透明度日本一・カルデラ湖</span>
       </div>
       <div class="card-body">
-        <div class="row"><div class="time">09:00</div><div class="detail">ファーム富田（朝イチで混雑前に）　無料入場・無料駐車</div></div>
-        <div class="row"><div class="time">11:00頃</div><div class="detail">富良野市内に移動</div></div>
-        <div class="row"><div class="time">15〜16時</div><div class="detail">くまげら<span class="tag">当日並び・15〜16時台が狙い目</span></div></div>
-        <div class="row"><div class="time">〜</div><div class="detail">チーズ工房 or 自由時間（気力次第）</div></div>
-        <div class="row"><div class="time">夕方</div><div class="detail">ホテルに戻り大浴場・サウナでのんびり</div></div>
-        <div class="note">月曜日のため週末より混雑が落ち着く見込み。</div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-head lavender">
-        <span class="badge badge-lav">DAY 4</span>
-        <span style="font-weight:700">富良野 → 支笏湖</span>
-        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月4日（火）</span>
-      </div>
-      <div class="card-body">
-        <div class="row"><div class="time">10:00</div><div class="detail">ラビスタ チェックアウト・出発</div></div>
-        <div class="row"><div class="time">〜</div><div class="detail">夕張メロード<span class="tag">寄れたらラッキー程度</span></div></div>
-        <div class="row"><div class="time">14:00</div><div class="detail">支笏湖エリア到着</div></div>
-        <div class="row"><div class="time">15:00</div><div class="detail">水の謌 チェックイン<span class="tag tag-g">1泊</span></div></div>
-        <div class="row"><div class="time">〜</div><div class="detail">温泉・露天風呂でゆっくり</div></div>
-        <div class="row"><div class="time">夜</div><div class="detail">館内ダイニングで夕食<span class="tag tag-r">チェックイン時に確認</span></div></div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-head">
-        <span class="badge badge-gray">DAY 5</span>
-        <span style="font-weight:700">支笏湖 → 宮崎　帰宅</span>
-        <span style="margin-left:auto;font-size:12px;color:var(--text-muted)">8月5日（水）</span>
-      </div>
-      <div class="card-body">
-        <div class="row"><div class="time">10:00</div><div class="detail">水の謌 チェックアウト</div></div>
-        <div class="row"><div class="time">11:00</div><div class="detail">新千歳空港着　→ レンタカー返却</div></div>
-        <div class="row"><div class="time">〜16:20</div><div class="detail">空港内でランチ・土産購入</div></div>
-        <div class="row"><div class="time">16:20</div><div class="detail">新千歳 発　NH778 → 伊丹乗継</div></div>
-        <div class="row"><div class="time">20:55</div><div class="detail">宮崎空港 着　おつかれさまでした！</div></div>
+        <div style="font-size:13px;line-height:1.8;margin-bottom:10px">火山活動で生まれたカルデラ湖で、日本の湖の中でも透明度トップクラス。周囲を樽前山など活火山に囲まれ、大自然の迫力を感じられる。新千歳空港から車で30〜40分と近く、旅の締めくくりにぴったりの秘境感ある温泉地。</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px">
+          <div style="background:var(--sky-light);border-radius:6px;padding:5px 10px;font-size:12px">♨️ 支笏湖温泉</div>
+          <div style="background:var(--sky-light);border-radius:6px;padding:5px 10px;font-size:12px">🐟 チップ（ヒメマス）料理</div>
+          <div style="background:var(--sky-light);border-radius:6px;padding:5px 10px;font-size:12px">🚣 湖上カヌー・遊覧船</div>
+          <div style="background:var(--sky-light);border-radius:6px;padding:5px 10px;font-size:12px">🌿 湖畔の自然散策</div>
+        </div>
       </div>
     </div>
   </section>
@@ -741,6 +917,8 @@
           <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>航空券（スマホ/印刷）</span></div>
           <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>クレジットカード</span></div>
           <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>健康保険証</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>旅行保険証券</span></div>
+          <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>お薬手帳（グランマ分）</span></div>
           <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>免許証</span></div>
           <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>現金（小銭含む）</span></div>
           <div class="check-item" onclick="toggle(this)"><div class="check-box"></div><span>このしおり</span></div>
@@ -768,10 +946,9 @@
       </div>
     </div>
   </section>
+</section>
 
-
-
-
+</div>
 
 </div>
 
