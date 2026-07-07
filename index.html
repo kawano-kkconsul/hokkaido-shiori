@@ -638,54 +638,10 @@
     <div class="section-title">🗺️ ルートマップ</div>
     <div class="card">
       <div class="card-body" style="padding:0;overflow:hidden;border-radius:var(--radius)">
-        <svg viewBox="0 0 400 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;display:block;background:#EAF4FB">
-          <!-- 北海道の大まかな輪郭 -->
-          <path d="M60,60 Q120,30 200,40 Q280,35 340,80 Q370,120 360,180 Q350,230 320,260 Q290,290 260,300 Q240,310 220,340 Q200,360 180,350 Q150,340 130,310 Q100,280 80,240 Q50,200 45,160 Q40,110 60,60 Z" fill="#C8E6C9" stroke="#8BC34A" stroke-width="1.5" opacity="0.6"/>
-          <!-- 道路ライン -->
-          <line x1="220" y1="200" x2="190" y2="280" stroke="#FF8A65" stroke-width="2.5" stroke-dasharray="6,3"/>
-          <line x1="190" y1="280" x2="230" y2="310" stroke="#FF8A65" stroke-width="2.5" stroke-dasharray="6,3"/>
-          <!-- 新千歳空港 -->
-          <circle cx="230" cy="310" r="10" fill="#3A8DC0" stroke="white" stroke-width="2"/>
-          <text x="245" y="308" font-size="11" fill="#1E2A35" font-family="sans-serif" font-weight="bold">新千歳空港</text>
-          <text x="245" y="320" font-size="10" fill="#6B7D8E" font-family="sans-serif">✈ DAY1着 / DAY5発</text>
-          <!-- 支笏湖 -->
-          <ellipse cx="210" cy="295" rx="14" ry="10" fill="#7BB8D4" stroke="white" stroke-width="1.5"/>
-          <text x="160" y="290" font-size="11" fill="#1E2A35" font-family="sans-serif" font-weight="bold">支笏湖</text>
-          <text x="160" y="302" font-size="10" fill="#6B7D8E" font-family="sans-serif">🏨 DAY4泊</text>
-          <!-- 富良野 -->
-          <circle cx="190" cy="230" r="13" fill="#7B68BE" stroke="white" stroke-width="2"/>
-          <text x="135" y="226" font-size="11" fill="#1E2A35" font-family="sans-serif" font-weight="bold">富良野</text>
-          <text x="135" y="238" font-size="10" fill="#6B7D8E" font-family="sans-serif">🏨 DAY1〜3泊</text>
-          <!-- 美瑛 -->
-          <circle cx="220" cy="165" r="11" fill="#3B7A57" stroke="white" stroke-width="2"/>
-          <text x="235" y="162" font-size="11" fill="#1E2A35" font-family="sans-serif" font-weight="bold">美瑛</text>
-          <text x="235" y="174" font-size="10" fill="#6B7D8E" font-family="sans-serif">DAY2 観光</text>
-          <!-- 富良野〜美瑛の矢印 -->
-          <path d="M190,217 Q200,190 218,178" stroke="#7B68BE" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
-          <path d="M218,178 Q205,205 190,218" stroke="#3B7A57" stroke-width="2" fill="none" stroke-dasharray="4,3" marker-end="url(#arrow2)"/>
-          <!-- 矢印マーカー -->
-          <defs>
-            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="#7B68BE"/>
-            </marker>
-            <marker id="arrow2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
-              <path d="M0,0 L0,6 L8,3 z" fill="#3B7A57"/>
-            </marker>
-          </defs>
-          <!-- 凡例 -->
-          <rect x="20" y="390" width="360" height="75" rx="8" fill="white" opacity="0.85"/>
-          <circle cx="40" cy="410" r="6" fill="#7B68BE"/>
-          <text x="52" y="414" font-size="11" fill="#1E2A35" font-family="sans-serif">富良野（3泊の拠点）</text>
-          <circle cx="40" cy="430" r="6" fill="#3B7A57"/>
-          <text x="52" y="434" font-size="11" fill="#1E2A35" font-family="sans-serif">美瑛（DAY2日帰り観光）</text>
-          <ellipse cx="40" cy="450" rx="8" ry="6" fill="#7BB8D4"/>
-          <text x="52" y="454" font-size="11" fill="#1E2A35" font-family="sans-serif">支笏湖（DAY4 ご褒美宿）</text>
-          <line x1="210" y1="408" x2="240" y2="408" stroke="#FF8A65" stroke-width="2" stroke-dasharray="5,3"/>
-          <text x="248" y="412" font-size="11" fill="#1E2A35" font-family="sans-serif">移動ルート</text>
-          <!-- タイトル -->
-          <text x="200" y="22" font-size="13" fill="#1E2A35" font-family="sans-serif" font-weight="bold" text-anchor="middle">北海道 移動ルート</text>
-          <text x="200" y="38" font-size="10" fill="#6B7D8E" font-family="sans-serif" text-anchor="middle">新千歳 → 富良野 ⇔ 美瑛 → 支笏湖 → 新千歳</text>
-        </svg>
+        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1xJDbBl9_JZ-7bSoUJMqWvpzkqSzpHFE&ehbc=2E312F" width="100%" height="400" style="border:0;display:block" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div style="padding:10px 14px;font-size:12px;color:var(--text-muted)">
+        🔵 新千歳空港　🟣 富良野（3泊）　🟢 美瑛（DAY2観光）　🔴 支笏湖（DAY4泊）
       </div>
     </div>
   </section>
